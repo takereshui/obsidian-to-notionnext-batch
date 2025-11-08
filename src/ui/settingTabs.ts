@@ -51,7 +51,7 @@ export const DEFAULT_SETTINGS: PluginSettings = {
 	NotionLinkDisplay: true,
 	proxy: "",
 	GeneralButton: true,
-	tagButton: true,
+	tagButton: false,
 	customTitleButton: false,
 	customTitleName: "",
 	notionAPIGeneral: "",

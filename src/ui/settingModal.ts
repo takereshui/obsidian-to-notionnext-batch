@@ -24,7 +24,7 @@ export class SettingModal extends Modal {
 		databaseAbbreviateName: '',
 		notionAPI: '',
 		databaseID: '',
-		tagButton: true,
+			tagButton: false,
 		customTitleButton: false,
 		customTitleName: '',
 		customProperties: [],

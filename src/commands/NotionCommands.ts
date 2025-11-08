@@ -1,5 +1,5 @@
 import { i18nConfig } from "src/lang/I18n";
-import { Editor, MarkdownView, setTooltip } from "obsidian";
+import { Editor, MarkdownView, setTooltip, TFolder } from "obsidian";
 import { FuzzySuggester, DatabaseList } from "./FuzzySuggester";
 import { FolderSuggester } from "./FolderSuggester";
 import { uploadCommandCustom, uploadCommandGeneral, uploadCommandNext } from "../upload/uploadCommand";
@@ -151,8 +151,44 @@ export default class RibbonCommands {
 					}
 				});
 			}
-		});
+			});
+		}
+
+	/**
+	 * Batch upload a folder directly (called from context menu)
+	 */
+	async batchUploadFolder(folder: TFolder, dbDetails: DatabaseDetails) {
+		let result;
+		if (dbDetails.format === 'next') {
+			result = await batchUploadCommandNext(
+				this.plugin, 
+				this.plugin.settings, 
+				dbDetails, 
+				this.plugin.app, 
+				folder
+			);
+		} else if (dbDetails.format === 'general') {
+			result = await batchUploadCommandGeneral(
+				this.plugin, 
+				this.plugin.settings, 
+				dbDetails, 
+				this.plugin.app, 
+				folder
+			);
+		} else if (dbDetails.format === 'custom') {
+			result = await batchUploadCommandCustom(
+				this.plugin, 
+				this.plugin.settings, 
+				dbDetails, 
+				this.plugin.app, 
+				folder
+			);
+		}
+		
+		if (result) {
+			showBatchUploadSummary(result, folder.path);
+		}
 	}
 
 
-}
+	}

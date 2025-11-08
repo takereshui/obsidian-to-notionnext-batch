@@ -1,4 +1,4 @@
-import { App, Editor, MarkdownView, Notice, Plugin, PluginSettingTab, Setting } from "obsidian";
+import { App, Editor, MarkdownView, Notice, Plugin, PluginSettingTab, Setting, TFolder, Menu } from "obsidian";
 import { addIcons } from 'src/ui/icon';
 import { i18nConfig } from "src/lang/I18n";
 import ribbonCommands from "src/commands/NotionCommands";
@@ -35,6 +35,15 @@ export default class ObsidianSyncNotionPlugin extends Plugin {
 
         // This adds a settings tab so the user can configure various aspects of the plugin
         this.addSettingTab(new ObsidianSettingTab(this.app, this));
+
+        // Register folder context menu
+        this.registerEvent(
+            this.app.workspace.on("file-menu", (menu, file) => {
+                if (file instanceof TFolder) {
+                    this.addFolderContextMenu(menu, file);
+                }
+            })
+        );
 
     }
 
@@ -78,6 +87,25 @@ export default class ObsidianSyncNotionPlugin extends Plugin {
         };
 
         await this.saveSettings();
+    }
+
+    addFolderContextMenu(menu: Menu, folder: TFolder) {
+        // Add a separator before our menu items
+        menu.addSeparator();
+
+        // Add menu items for each database
+        for (let key in this.settings.databaseDetails) {
+            const dbDetails = this.settings.databaseDetails[key];
+            
+            menu.addItem((item) => {
+                item
+                    .setTitle(`📤 Sync to ${dbDetails.fullName}`)
+                    .setIcon("notion-logo")
+                    .onClick(async () => {
+                        await this.commands.batchUploadFolder(folder, dbDetails);
+                    });
+            });
+        }
     }
 
 }
