@@ -1,10 +1,10 @@
 {
-  "id": "share-to-notionnext",
-  "name": "Share to NotionNext",
-  "version": "2.9.0",
-  "minAppVersion": "0.0.1",
-  "description": "Shares obsidian md file to notion with notion api for NotionNext web deploy. Enhanced with batch upload feature for folder sync. Originally created by EasyChris/obsidian-to-notion.",
+  "id": "share-to-notionnext-batch",
+  "name": "Share to NotionNext Batch",
+  "version": "2.9.1",
+  "minAppVersion": "0.15.0",
+  "description": "Batch sync Obsidian files to Notion for NotionNext blog. Features folder context menu, recursive upload, and enhanced metadata support.",
   "author": "EasyChris, jxpeng98, takereshui",
-  "authorUrl": "https://github.com/jxpeng98",
+  "authorUrl": "https://github.com/takereshui/obsidian-to-notionnext-batch",
   "isDesktopOnly": false
 }
