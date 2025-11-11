@@ -1,10 +1,1 @@
-{
-  "id": "share-to-notionnext-batch",
-  "name": "Share to NotionNext Batch",
-  "version": "2.9.1",
-  "minAppVersion": "0.15.0",
-  "description": "Batch sync Obsidian files to Notion for NotionNext blog. Features folder context menu, recursive upload, and enhanced metadata support.",
-  "author": "EasyChris, jxpeng98, takereshui",
-  "authorUrl": "https://github.com/takereshui/obsidian-to-notionnext-batch",
-  "isDesktopOnly": false
-}
+{"id": "share-to-notionnext-batch","name": "Share to NotionNext Batch","version": "2.9.1","minAppVersion": "0.15.0","description": "Batch sync Markdown files to Notion for NotionNext blog deployment. Features folder context menu, recursive upload, batch synchronization, and enhanced metadata support.","author": "EasyChris, jxpeng98, takereshui","authorUrl": "https://github.com/takereshui","isDesktopOnly": false}
