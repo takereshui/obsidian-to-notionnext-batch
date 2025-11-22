@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 # Obsidian to NotionNext
 
 [![Test](https://github.com/jxpeng98/obsidian-to-NotionNext/actions/workflows/test.yml/badge.svg)](https://github.com/jxpeng98/obsidian-to-NotionNext/actions/workflows/test.yml)
@@ -8,6 +16,17 @@
 [//]: # ([![Github all releases]&#40;https://img.shields.io/github/downloads/jxpeng98/obsidian-to-NotionNext/total.svg&#41;]&#40;https://GitHub.com/jxpeng98/obsidian-to-NotionNext/releases/&#41;)
 
 [//]: # ([中文文档]&#40;README-zh.md&#41;)
+
+
+<img width="698" height="729" alt="image" src="https://github.com/user-attachments/assets/14f9ab4b-5699-4952-9e4a-9f4b96516383" />
+
+**下面这些没必要用看，如图配置好后右键文件夹即可批量上传到notion**
+
+
+
+
+
+
 
 **Now, support All Notion databases, including NotionNext and General Notion databases, and customise the database list.**
 
